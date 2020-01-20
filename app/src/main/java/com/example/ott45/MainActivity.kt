@@ -23,33 +23,19 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             CoroutineScope(IO).launch {
-                drawLetter1(1, "א")
-                drawLetter1(2, "ב")
-                drawLetter1(3, "נ")
-                drawLetter1(4, "ה")
-                drawLetter1(5, "ל")
+                /*drawLetter1(1, "ה")
+                drawLetter1(2, "א")
+                drawLetter1(3, "ו")
+                drawLetter1(4, "ר")*/
+                drawLetter1(1, "ח")
+                drawLetter1(2, "ט")
+                drawLetter1(3, "י")
+                drawLetter1(4, "ד")
+                drawLetter1(5, "ה")
                 drawLetter1(6, "ו")
-                drawLetter1(7, "י")
+                drawLetter1(7, "ז")
             }
-
-
         }
-
-        /* button.setOnClickListener {
-             GlobalScope.launch {
-                 withContext(Dispatchers.Main) {
-                     manageImage1()
-                     manageImage2()
-                     manageImage3()
-                     manageImage4()
-                     manageImage5()
-                     manageImage6()
-                     manageImage7()
-                 }
-
-             }
-
-         }*/
 
     }
 
@@ -67,14 +53,7 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    /* private fun drawLetter(index: Int, letter: String): AnimatedVectorDrawable {
-         val helper = Helper(this)
-         var address = helper.getAnimation(letter)
-         var view = getView(index) as ImageView
-         view.setImageResource(address)
-         val avd = view.drawable as AnimatedVectorDrawable
-         return avd
-     }*/
+
 
     fun getView(index: Int): View {
         var view: View
