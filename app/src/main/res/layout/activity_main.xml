@@ -9,10 +9,12 @@
     android:keepScreenOn="true">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="500dp"
+        android:id="@+id/worldLayout1"
+        android:layout_width="400dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="1dp"
-        android:layout_marginTop="16dp"
+
+        android:layout_marginBottom="681dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -20,7 +22,7 @@
             android:id="@+id/imageView1"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginEnd="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:color/transparent" />
@@ -30,6 +32,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="200dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:color/transparent" />
@@ -39,6 +42,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="250dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:color/transparent" />
@@ -48,6 +52,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="300dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:color/transparent" />
@@ -57,6 +62,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="350dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:color/transparent" />
@@ -66,6 +72,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="400dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:color/transparent" />
@@ -75,6 +82,7 @@
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginEnd="450dp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@android:color/transparent" />
@@ -87,7 +95,34 @@
         android:layout_marginBottom="153dp"
         android:background="@android:color/holo_orange_dark"
         android:text="Button"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/downHelperLine"
+        android:layout_width="400dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="200dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/white" />
+
+    <ImageView
+        android:id="@+id/upHelperLine"
+        android:layout_width="400dp"
+        android:layout_height="1dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:color/white" />
 </androidx.constraintlayout.widget.ConstraintLayout>

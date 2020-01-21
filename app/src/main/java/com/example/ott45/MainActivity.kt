@@ -1,10 +1,15 @@
 package com.example.ott45
 
+import android.content.res.Resources
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
 import android.view.View
+import android.view.View.GONE
+import android.view.View.VISIBLE
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
@@ -14,38 +19,77 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
-    var contor=-1
+    var contor = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        button.visibility = View.INVISIBLE
 
-        button.setOnClickListener {
-            CoroutineScope(IO).launch {
-                /*drawLetter1(1, "ה")
-                drawLetter1(2, "א")
-                drawLetter1(3, "ו")
-                drawLetter1(4, "ר")*/
-                drawLetter1(1, "ח")
-                drawLetter1(2, "ט")
-                drawLetter1(3, "י")
-                drawLetter1(4, "ד")
-                drawLetter1(5, "ה")
-                drawLetter1(6, "ו")
-                drawLetter1(7, "ז")
-            }
+
+        linesHelper(0)
+        setParams(worldLayout1, 250, 380, 0, 0, 0, 500)
+
+      //  worldLayout1.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+
+        CoroutineScope(IO).launch {
+            drawLetter1(1, "ה")
+            drawLetter1(2, "א")
+            drawLetter1(3, "ו")
+            drawLetter1(4, "ר")
+
         }
 
     }
 
+    private fun individiualPatam(view: View) {
+        when (contor) {
+            1 -> setParams(view, 150, 150, 0, 0, 15, 35)
+            2 -> setParams(view, 180, 180, 0, 0, 110, 55)
+            3 -> setParams(view, 170, 170, 0, 0, 170, 50)
+            4 -> setParams(view, 160, 160, 0, 0, 230, 10)
+        }
+
+    }
+
+    private fun setWordLayout(worldLayout: ConstraintLayout?, mTop: Int) {
+        setParams(worldLayout1, 0, 0, 0, mTop, 0, 0)
+
+    }
+
+    private fun setParams(
+        view: View,
+        scaleX: Int,
+        scaleY: Int,
+        mLeft: Int,
+        mTop: Int,
+        mRight: Int,
+        mBottom: Int
+    ) {
+        if (scaleX > 0) {
+            view.layoutParams.height = scaleX.toPx()
+            view.layoutParams.width = scaleY.toPx()
+        }
+        val param = view.layoutParams as ConstraintLayout.LayoutParams
+        param.setMargins(mLeft.toPx(), mTop.toPx(), mRight.toPx(), mBottom.toPx())
+        view.layoutParams = param
+        view.requestLayout()
+    }
+
+
     private suspend fun drawLetter1(index: Int, letter: String) {
-        val helper = Helper(this)
-        var address = helper.getAnimation(letter)
+        contor++
+        val view = getView(index) as ImageView
+        val address = Helper(this).getAnimation(letter)
+        individiualPatam(view)
+
+
+
         withContext(Main) {
-            contor++
+
             delay(1000)
-            var view = getView(index) as ImageView
+
             view.setImageResource(address)
             val avd = view.drawable as AnimatedVectorDrawable
             avd.start()
@@ -53,7 +97,20 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
+
+    private fun linesHelper(ind: Int) {
+        if (ind == 0) {
+            upHelperLine.visibility = GONE
+            downHelperLine.visibility = GONE
+        } else {
+            upHelperLine.visibility = VISIBLE
+            downHelperLine.visibility = VISIBLE
+        }
+        setParams(upHelperLine, 0, 0, 0, 50, 0, 0)
+        setParams(downHelperLine, 0, 0, 0, 145, 0, 0)
+    }
 
     fun getView(index: Int): View {
         var view: View
@@ -70,6 +127,13 @@ class MainActivity : AppCompatActivity() {
         return view
     }
 
+    /* private fun firstSetup() {
+           imageView1.layoutParams.height=150.toPx()
+           imageView1.layoutParams.width=150.toPx()
+           val param=imageView1.layoutParams as LinearLayout.LayoutParams
+           param.setMargins(100,0,0,0)
+           imageView1.layoutParams=param
+       }*/
 
     private suspend fun manageImage1() {
         // delay(1000)
