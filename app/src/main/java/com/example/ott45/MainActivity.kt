@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.word1_layout.*
+import kotlinx.android.synthetic.main.word2_layout.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
@@ -19,29 +21,49 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
-    var contor = 0
+    var contor = 4
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         button.visibility = View.INVISIBLE
-
-
         linesHelper(0)
-        setParams(worldLayout1, 250, 380, 0, 0, 0, 500)
 
-      //  worldLayout1.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+          // firstWord()
+        secondWord()
+
+
+    }
+
+    private fun secondWord() {
+
+        setParams(worldLayout2, 150, 380, 0, 0, 0, 300)
+
+      //  worldLayout2.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
 
         CoroutineScope(IO).launch {
-            drawLetter1(1, "ה")
-            drawLetter1(2, "א")
-            drawLetter1(3, "ו")
-            drawLetter1(4, "ר")
+            creadAVD(5, "ה")
+            creadAVD(6, "ו")
+            creadAVD(7, "א")
+
+            creadAVD(8, "מ")
+            creadAVD(9, "ע")
+            creadAVD(10, "ש")
+            creadAVD(11, "ה")
+
+            creadAVD(12, "ב")
+            creadAVD(13, "ר")
+            creadAVD(14, "א")
+            creadAVD(15, "ש")
+            creadAVD(16, "י")
+            creadAVD(17, "ת")
 
         }
 
+
     }
+
 
     private fun individiualPatam(view: View) {
         when (contor) {
@@ -49,12 +71,41 @@ class MainActivity : AppCompatActivity() {
             2 -> setParams(view, 180, 180, 0, 0, 110, 55)
             3 -> setParams(view, 170, 170, 0, 0, 170, 50)
             4 -> setParams(view, 160, 160, 0, 0, 230, 10)
+
+            5 -> setParams(view, 50, 50, 0, 0, 10, 10)
+            6 -> setParams(view, 50, 50, 0, 0, 30, 10)
+            7 -> setParams(view, 55, 55, 0, 0, 50, 15)
+
+            8 -> setParams(view, 50, 50, 0, 0, 90, 10)
+            9 -> setParams(view, 40, 40, 0, 0, 120, 15)
+            10 -> setParams(view, 40, 40, 0, 0, 137, 10)
+            11 -> setParams(view, 50, 50, 0, 0, 155, 10)
+
+            12 -> setParams(view, 50, 50, 0, 0, 205, 15)
+            13 -> setParams(view, 50, 50, 0, 0, 230, 5)
+            14 -> setParams(view, 55, 55, 0, 0, 260, 15)
+            15 -> setParams(view, 45, 45, 0, 0, 290, 8)
+            16 -> setParams(view, 50, 50, 0, 0, 307, 10)
+            17 -> setParams(view, 50, 50, 0, 0, 330, 5)
         }
 
     }
 
-    private fun setWordLayout(worldLayout: ConstraintLayout?, mTop: Int) {
-        setParams(worldLayout1, 0, 0, 0, mTop, 0, 0)
+
+    private fun firstWord() {
+
+        setParams(worldLayout1, 250, 380, 0, 0, 0, 500)
+
+        //  worldLayout1.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+
+        CoroutineScope(IO).launch {
+            creadAVD(1, "ה")
+            creadAVD(2, "א")
+            creadAVD(3, "ו")
+            creadAVD(4, "ר")
+
+
+        }
 
     }
 
@@ -78,7 +129,7 @@ class MainActivity : AppCompatActivity() {
     }
 
 
-    private suspend fun drawLetter1(index: Int, letter: String) {
+    private suspend fun creadAVD(index: Int, letter: String) {
         contor++
         val view = getView(index) as ImageView
         val address = Helper(this).getAnimation(letter)
@@ -100,6 +151,11 @@ class MainActivity : AppCompatActivity() {
     fun Int.toPx(): Int = (this * Resources.getSystem().displayMetrics.density).toInt()
 
 
+    private fun setWordLayout(worldLayout: ConstraintLayout?, mTop: Int) {
+        setParams(worldLayout1, 0, 0, 0, mTop, 0, 0)
+
+    }
+
     private fun linesHelper(ind: Int) {
         if (ind == 0) {
             upHelperLine.visibility = GONE
@@ -119,9 +175,21 @@ class MainActivity : AppCompatActivity() {
             2 -> view = imageView2
             3 -> view = imageView3
             4 -> view = imageView4
-            5 -> view = imageView5
-            6 -> view = imageView6
-            7 -> view = imageView7
+
+            5 -> view = imageView10
+            6 -> view = imageView11
+            7 -> view = imageView12
+            8 -> view = imageView13
+            9 -> view = imageView14
+            10 -> view = imageView15
+            11 -> view = imageView16
+            12 -> view = imageView17
+            13 -> view = imageView18
+              14 -> view = imageView19
+             15 -> view = imageView20
+             16 -> view = imageView21
+             17 -> view = imageView22
+            18 -> view = imageView23
             else -> view = imageView1
         }
         return view
