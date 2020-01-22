@@ -21,23 +21,27 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
-    var contor = 4
+    var contor = 0
+  // var contor = 4
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button.visibility = View.INVISIBLE
-        linesHelper(0)
+        CoroutineScope(Main).launch {
+            firstWord()
 
-          // firstWord()
-        secondWord()
+            secondWord()
+        }
+
+
 
 
     }
 
-    private fun secondWord() {
-
+    private suspend fun secondWord() {
+        delay(5000)
+        contor = 4
         setParams(worldLayout2, 150, 380, 0, 0, 0, 300)
 
       //  worldLayout2.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
