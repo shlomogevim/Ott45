@@ -47,18 +47,18 @@ class Helper(val context: Context) {
 
 //        "פ"-> R.drawable.phaii0
 //       "צ"-> R.drawable.zadik0
-//        "ק"-> R.drawable.koof0;
+        "ק"-> R.drawable.koof0;
 
         "ר" -> R.drawable.reash0
         "ש"-> R.drawable.sheen0
 
         "ת"-> R.drawable.taf0
-//       "ם"-> R.drawable.mem_shofit0
-//        "ן"-> R.drawable.non_shofit0
-//        "ץ"-> R.drawable.zhadik_shofit0
-//       "ף"-> R.drawable.pai_shofit0
-//        "ך"->R.drawable.chaff_sofit0
-//
+       "ם"-> R.drawable.mem_shofit0
+       /* "ן"-> R.drawable.non_shofit0
+        "ץ"-> R.drawable.zhadik_shofit0
+       "ף"-> R.drawable.pai_shofit0*/
+       "ך"->R.drawable.chaff_sofit0
+
 
 
 

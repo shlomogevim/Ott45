@@ -4,15 +4,13 @@ import android.content.res.Resources
 import android.graphics.drawable.AnimatedVectorDrawable
 import android.os.Bundle
 import android.view.View
-import android.view.View.GONE
-import android.view.View.VISIBLE
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.content.ContextCompat
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.word1_layout.*
 import kotlinx.android.synthetic.main.word2_layout.*
+import kotlinx.android.synthetic.main.word3_layout.*
+import kotlinx.android.synthetic.main.word4_layout.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.Dispatchers.Main
@@ -22,7 +20,7 @@ import kotlinx.coroutines.withContext
 
 class MainActivity : AppCompatActivity() {
     var contor = 0
-  // var contor = 4
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,13 +28,53 @@ class MainActivity : AppCompatActivity() {
 
         CoroutineScope(Main).launch {
             firstWord()
-
             secondWord()
+            thirdWord()
+            fourthWord()
         }
 
 
+    }
 
+    private suspend fun fourthWord() {
+        delay(5000)
 
+        contor = 22
+        setParams(worldLayout4, 150, 365, 0, 530, 0, 0)
+        // worldLayout4.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+        creadAVD(23, "ה")
+        creadAVD(24, "ו")
+        creadAVD(25, "א")
+
+        creadAVD(26, "מ")
+        creadAVD(27, "ק")
+        creadAVD(28, "ו")
+        creadAVD(29, "ם")
+
+        creadAVD(30, "ב")
+        creadAVD(31, "ל")
+        creadAVD(32, "י")
+
+        creadAVD(33, "א")
+        creadAVD(34, "ו")
+        creadAVD(35, "ר")
+
+    }
+
+    private suspend fun thirdWord() {
+        delay(15000)
+
+        contor = 17
+        setParams(worldLayout3, 150, 360, 0, 350, 0, 0)
+        //  worldLayout3.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+
+        CoroutineScope(IO).launch {
+            creadAVD(18, "ה")
+            creadAVD(19, "ח")
+            creadAVD(20, "ו")
+            creadAVD(21, "ש")
+            creadAVD(22, "ך")
+        }
     }
 
     private suspend fun secondWord() {
@@ -44,7 +82,7 @@ class MainActivity : AppCompatActivity() {
         contor = 4
         setParams(worldLayout2, 150, 380, 0, 0, 0, 300)
 
-      //  worldLayout2.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
+        //  worldLayout2.background = ContextCompat.getDrawable(this, R.drawable.ic_launcher_background)
 
         CoroutineScope(IO).launch {
             creadAVD(5, "ה")
@@ -91,6 +129,30 @@ class MainActivity : AppCompatActivity() {
             15 -> setParams(view, 45, 45, 0, 0, 290, 8)
             16 -> setParams(view, 50, 50, 0, 0, 307, 10)
             17 -> setParams(view, 50, 50, 0, 0, 330, 5)
+
+            18 -> setParams(view, 120, 120, 0, 0, 15, 35)
+            19 -> setParams(view, 140, 140, 0, 0, 75, 20)
+            20 -> setParams(view, 120, 120, 0, 0, 135, 38)
+            21 -> setParams(view, 110, 110, 0, 0, 175, 25)
+            22 -> setParams(view, 120, 120, 0, 15, 230, 0)
+
+            23 -> setParams(view, 50, 50, 0, 0, 0, 20)
+            24 -> setParams(view, 50, 50, 0, 0, 20, 20)
+            25 -> setParams(view, 55, 55, 0, 0, 40, 25)
+
+            26 -> setParams(view, 55, 55, 0, 0, 80, 20)
+            27 -> setParams(view, 55, 55, 0, 0, 113, 0)
+            28 -> setParams(view, 50, 50, 0, 0, 135, 20)
+            29 -> setParams(view, 45, 45, 0, 0, 157, 15)
+
+            30 -> setParams(view, 55, 55, 0, 0, 200, 25)
+            31 -> setParams(view, 50, 50, 0, 0, 230, 20)
+            32 -> setParams(view, 50, 50, 0, 0, 248, 25)
+
+            33 -> setParams(view, 55, 55, 0, 0, 285, 25)
+            34 -> setParams(view, 50, 50, 0, 0, 305, 20)
+            35 -> setParams(view, 50, 50, 0, 0, 323, 12)
+
         }
 
     }
@@ -160,17 +222,6 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun linesHelper(ind: Int) {
-        if (ind == 0) {
-            upHelperLine.visibility = GONE
-            downHelperLine.visibility = GONE
-        } else {
-            upHelperLine.visibility = VISIBLE
-            downHelperLine.visibility = VISIBLE
-        }
-        setParams(upHelperLine, 0, 0, 0, 50, 0, 0)
-        setParams(downHelperLine, 0, 0, 0, 145, 0, 0)
-    }
 
     fun getView(index: Int): View {
         var view: View
@@ -189,11 +240,31 @@ class MainActivity : AppCompatActivity() {
             11 -> view = imageView16
             12 -> view = imageView17
             13 -> view = imageView18
-              14 -> view = imageView19
-             15 -> view = imageView20
-             16 -> view = imageView21
-             17 -> view = imageView22
-            18 -> view = imageView23
+            14 -> view = imageView19
+            15 -> view = imageView20
+            16 -> view = imageView21
+            17 -> view = imageView22
+
+            18 -> view = imageView30
+            19 -> view = imageView31
+            20 -> view = imageView32
+            21 -> view = imageView33
+            22 -> view = imageView34
+
+            23 -> view = imageView40
+            24 -> view = imageView41
+            25 -> view = imageView42
+            26 -> view = imageView43
+            27 -> view = imageView44
+            28 -> view = imageView45
+            29 -> view = imageView46
+            30 -> view = imageView47
+            31 -> view = imageView48
+            32 -> view = imageView49
+            33 -> view = imageView491
+            34 -> view = imageView492
+            35 -> view = imageView493
+
             else -> view = imageView1
         }
         return view
