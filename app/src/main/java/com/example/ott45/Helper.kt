@@ -37,30 +37,23 @@ class Helper(val context: Context) {
         "ח" -> R.drawable.kait0
         "ט" -> R.drawable.tet0
         "י" -> R.drawable.yod0
-
-    //  "כ"-> R.drawable.kaaf0
+        "כ" -> R.drawable.kaaf0
         "ל" -> R.drawable.lamed0
-       "מ"-> R.drawable.mem0
+        "מ" -> R.drawable.mem0
         "נ" -> R.drawable.non0
-      // "ס"-> R.drawable.shmech0
-       "ע"-> R.drawable.aahin0
-
-//        "פ"-> R.drawable.phaii0
-//       "צ"-> R.drawable.zadik0
-        "ק"-> R.drawable.koof0;
-
+        "ס" -> R.drawable.shmech0
+        "ע" -> R.drawable.aahin0
+        "פ" -> R.drawable.phaii0
+        "צ" -> R.drawable.zadik0
+        "ק" -> R.drawable.koof0;
         "ר" -> R.drawable.reash0
-        "ש"-> R.drawable.sheen0
-
-        "ת"-> R.drawable.taf0
-       "ם"-> R.drawable.mem_shofit0
-       /* "ן"-> R.drawable.non_shofit0
-        "ץ"-> R.drawable.zhadik_shofit0
-       "ף"-> R.drawable.pai_shofit0*/
-       "ך"->R.drawable.chaff_sofit0
-
-
-
+        "ש" -> R.drawable.sheen0
+        "ת" -> R.drawable.taf0
+        "ם" -> R.drawable.mem_shofit0
+        "ן" -> R.drawable.non_shofit0
+        "ץ" -> R.drawable.zhadik_shofit0
+        "ף" -> R.drawable.pai_shofit0
+        "ך" -> R.drawable.chaff_sofit0
 
         else -> R.drawable.alleff0
 
@@ -93,26 +86,26 @@ class Helper(val context: Context) {
     return re;
 }*/
 
-  /*  if (st.equals("ז")) re = R.drawable.zain;
-    if (st.equals("ח")) re = R.drawable.kait;
-    if (st.equals("ט")) re = R.drawable.tet;
-    if (st.equals("י")) re = R.drawable.yod;
-    if (st.equals("כ")) re = R.drawable.kaaf;
-    if (st.equals("ל")) re = R.drawable.lamed;
-    if (st.equals("מ")) re = R.drawable.mem;
-    if (st.equals("נ")) re = R.drawable.non;
-    if (st.equals("ס")) re = R.drawable.shmech;
-    if (st.equals("ע")) re = R.drawable.aahin;
-    if (st.equals("פ")) re = R.drawable.phaii;
-    if (st.equals("צ")) re = R.drawable.zadik;
-    if (st.equals("ק")) re = R.drawable.koof;
-    if (st.equals("ר")) re = R.drawable.reash;
-    if (st.equals("ש")) re = R.drawable.sheen;
-    if (st.equals("ת")) re = R.drawable.taf;
-    if (st.equals("ם")) re = R.drawable.mem_shofit;
-    if (st.equals("ן")) re = R.drawable.non_shofit;
-    if (st.equals("ץ")) re = R.drawable.zhadik_shofit;
-    if (st.equals("ף")) re = R.drawable.pai_shofit;
-    if (st.equals("ך")) re = R.drawable.chaff_sofit;*/
+/*  if (st.equals("ז")) re = R.drawable.zain;
+  if (st.equals("ח")) re = R.drawable.kait;
+  if (st.equals("ט")) re = R.drawable.tet;
+  if (st.equals("י")) re = R.drawable.yod;
+  if (st.equals("כ")) re = R.drawable.kaaf;
+  if (st.equals("ל")) re = R.drawable.lamed;
+  if (st.equals("מ")) re = R.drawable.mem;
+  if (st.equals("נ")) re = R.drawable.non;
+  if (st.equals("ס")) re = R.drawable.shmech;
+  if (st.equals("ע")) re = R.drawable.aahin;
+  if (st.equals("פ")) re = R.drawable.phaii;
+  if (st.equals("צ")) re = R.drawable.zadik;
+  if (st.equals("ק")) re = R.drawable.koof;
+  if (st.equals("ר")) re = R.drawable.reash;
+  if (st.equals("ש")) re = R.drawable.sheen;
+  if (st.equals("ת")) re = R.drawable.taf;
+  if (st.equals("ם")) re = R.drawable.mem_shofit;
+  if (st.equals("ן")) re = R.drawable.non_shofit;
+  if (st.equals("ץ")) re = R.drawable.zhadik_shofit;
+  if (st.equals("ף")) re = R.drawable.pai_shofit;
+  if (st.equals("ך")) re = R.drawable.chaff_sofit;*/
 //}
 
